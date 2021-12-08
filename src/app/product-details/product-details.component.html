@@ -1,0 +1,47 @@
+<!--
+    <section>
+    <div class="row">
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img [src]="Product.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{product.title}}</h5>
+                  <p class="card-text">{{product.description}}</p>
+                  <p class="card-text">price : {{ product.price | currency : 'USD': 'symbol' }}</p>
+                  <button type="button" class="btn btn-info" (click) = "AddToCart()">Add to cart</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</section>
+-->
+<section class="row">
+    <div class="row">
+        <div class="col-6 my-5 mx-5 d-flex align-items-center">
+            <table>
+                <tr>
+                  <th>Product</th>
+                  <th>{{Product.title}}</th>
+                </tr>
+                <tr>
+                    <th>Product details</th>
+                    <th>{{Product.description}}</th>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <th>{{ Product.price | currency : 'USD': 'symbol' }}</th>
+                </tr>
+                <tr>
+                    <th>Add to cart</th>
+                    <th><button type="button" class="btn btn-info" (click)= "AddToCart()">Add to cart</button></th>
+                </tr>
+              </table>
+        </div>
+        <div class="col-4 my-5 mx-5">
+            <div class="card" style="width: 18rem;">
+                <img [src]="Product.image" class="card-img-top" alt="..."> 
+            </div>
+            
+        </div>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let product of womenCat">
+            <div class="card h-100 mx-3 my-3">
+                <img [src]="product.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{product.title}}</h5>
+                  <p class="card-text">{{product.description}}</p>
+                  <!--<p class="card-text"> rating : {{product.rating.rate}}</p>-->
+                  <!--<p class="card-text">price : {{ pro.price | currency : 'EGP': 'code'  : 'maxFractionDigits'  : 'ar_EG'  }}</p>-->
+                  <p class="card-text">price : {{ product.price | currency : 'USD': 'symbol' }}</p>
+                  <button type="button" class="btn btn-info" (click) = "showData(product.id)">Details</button>
+                </div>
+                <div class="card-footer">
+                   <!--<small class="text-muted" [ngStyle] = "{'color': (pro.rating.count_in_stock === 0) ? 'red' : 'green'} "> {{product.rating.count_in_stock | stock}}</small>-->    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+

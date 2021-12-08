@@ -1,0 +1,19 @@
+<div class="row justify-content-center my-5">
+    <div class="col-4">
+        <form #LoginForm = "ngForm" (ngSubmit)= "revievefunc(LoginForm)">
+            <div class="mb-3">
+              <label for="EmailID" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="EmailID" name="getemail" #getemail = "ngModel" ngModel required  pattern="^[a-zA-Z0-9.!#$%&’*+\=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+              <div *ngIf="getemail.touched && getemail.errors?.required && LoginForm.submitted" [ngStyle]="{'color' : 'red'}"> This field is required</div>
+              <div *ngIf="getemail.touched && !getemail.valid && LoginForm.submitted" [ngStyle]="{'color' : 'red'}"> This Email isn't valid</div>
+            </div>
+            <div class="mb-3">
+              <label for="PasswordID" class="form-label">Password</label>
+              <input type="password" class="form-control" id="PasswordID" name="getpassword" #getpassword = "ngModel" ngModel>
+              <div *ngIf="getpassword.touched && getpassword.errors?.required && LoginForm.submitted" [ngStyle]="{'color' : 'red'}"> This field is required</div>
+              <div *ngIf="getpassword.touched && !getpassword.valid && LoginForm.submitted" [ngStyle]="{'color' : 'red'}"> This password isn't valid</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Log-in</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div><h4>Regestiration</h4></div>
+            <form [formGroup] = "RegestirationForm" (ngSubmit)= "Register()">
+                <div class="mb-3">
+                    <label for="nameID" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="nameID" name="FormalName" formControlName="FormalName" >
+                    <div *ngIf="(RegestirationForm.controls.FormalName.touched && RegestirationForm.controls.FormalName.errors?.required)" style="color: red;">Required</div>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="User_name" class="form-label">User_Name</label>
+                    <input type="text" class="form-control" id="User_name" name="UserName" formControlName="UserName" >
+                    <div *ngIf="RegestirationForm.controls.UserName.touched && RegestirationForm.controls.UserName.errors?.required" style="color: red;">Required</div>
+                    <div *ngIf="RegestirationForm.controls.UserName.touched && !RegestirationForm.controls.UserName.valid" style="color: red;">not valid user name must be without spaces</div>
+                    
+                </div>
+                <div class="mb-3">
+                  <label for="EmailID" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="EmailID" aria-describedby="emailHelp" name="Emailreg" formControlName="Emailreg">
+                  <div *ngIf="RegestirationForm.controls.Emailreg.touched && RegestirationForm.controls.Emailreg.errors?.required" style="color: red;">Required</div>
+                  <div *ngIf="RegestirationForm.controls.Emailreg.touched && !RegestirationForm.controls.Emailreg.valid" style="color: red;">not valid Email</div>
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="PasswordID" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="PasswordID" name="Password" formControlName="Password">
+                  <div *ngIf="RegestirationForm.controls.Password.touched && RegestirationForm.controls.Password.errors?.required" style="color: red;">Required</div>
+                  <div *ngIf="RegestirationForm.controls.Password.touched && !RegestirationForm.controls.Password.valid" style="color: red;">must be at least 8 characters and one capital or small letter and numbers</div>
+                  
+                </div>
+                <div class="mb-3">
+                    <label for="PasswordCheckID" class="form-label">type your password again </label>
+                    <input type="password" class="form-control" id="PasswordCheckID" name="PasswordCheck" formControlName="PasswordCheck">
+                    <div *ngIf="RegestirationForm.controls.PasswordCheck.touched && RegestirationForm.controls.PasswordCheck.errors?.required" style="color: red;">Required</div>
+                    <div *ngIf="RegestirationForm.controls.PasswordCheck.touched && RegestirationForm.controls.PasswordCheck.errors?.mustMatch" style="color: red;">must equal to real password</div>
+                  </div>
+                <button type="submit" class="btn btn-primary" *ngIf="RegestirationForm.valid">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

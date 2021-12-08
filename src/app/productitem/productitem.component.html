@@ -1,0 +1,15 @@
+
+    <div class="card h-100 mx-3 my-3" >
+      <img [src]="pro.image" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{pro.title}}</h5>
+        <p class="card-text">{{pro.description}}</p>
+        <p class="card-text"> rating : {{pro.rating.rate}}</p>
+        <!--<p class="card-text">price : {{ pro.price | currency : 'EGP': 'code'  : 'maxFractionDigits'  : 'ar_EG'  }}</p>-->
+        <p class="card-text">price : {{ pro.price | currency : 'USD': 'symbol' }}</p>
+        <button type="button" class="btn btn-info" (click) = "showData()">Details</button>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted" [ngStyle] = "{'color': (pro.rating.count_in_stock === 0) ? 'red' : 'green'} "> {{pro.rating.count_in_stock | stock}}</small>
+      </div>
+    </div>

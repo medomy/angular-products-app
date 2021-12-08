@@ -1,0 +1,32 @@
+<section class="container">
+    <h2 class="mx-5 my-4"><strong>Shopping Cart :</strong></h2>>
+    <div class="row py-4">
+        <div class="row" >
+            <div class="col-2 mx-3">Image</div>
+            <div class="col-2 mx-3">Product</div>
+            <div class="col-2 mx-3">Number</div>
+            <div class="col-1 mx-3 d-flex justify-content-center">Add</div>
+            <div class="col-1 mx-3 d-flex justify-content-center">decrease</div>
+            <div class="col-1 mx-3">price</div>
+        </div>
+        <div class="row" *ngFor="let product of purshasedProducts">
+            <div class="col-2 mx-3 my-3"><img [src]="product.image" class="col-2" alt="..."></div>
+            <div class="col-2 mx-3 my-3">{{product.title}}</div>
+            <div class="col-2 mx-3 my-3">{{product.count}}</div>
+            <div class="col-1 mx-3 my-3 d-flex justify-content-center"><button type="button" class="btn btn-light" (click)= "Add(product.id)"><i class="fas fa-arrow-up"></i></button></div>
+            <div class="col-1 mx-3 my-3 d-flex justify-content-center"><button type="button" class="btn btn-light" (click)= "minus(product.id)"><i class="fas fa-arrow-down"></i></button></div>
+            <div class="col-1 mx-3 my-3">{{product.price * product.count}}</div>
+        </div>
+        <div class="row my-3 justify-content-center">
+            <div class="col-4 mx-3" *ngIf="purshasedProducts">
+                <button type="button" class="btn btn-danger" (click) = "DeleteAll()">Delete All</button>
+            </div>
+            <div class="col-4 mx-3">
+                {{TotalPrice}}
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
