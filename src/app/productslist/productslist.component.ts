@@ -262,7 +262,7 @@ export class ProductslistComponent implements OnInit {
       }
     )
   }
-  recieve(prod : Products){
+  recieve(prod : Products): void{
     //console.log(prod);
     this.fetchser.Getoneproduct(prod.id).subscribe((data)=>console.log(data));
     this.route.navigate([`Details/${prod.id}`]);
