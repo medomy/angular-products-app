@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FetchService } from '../fetch.service';
+
 import { Router } from '@angular/router';
+import { FetchService } from 'src/app/services/fetch/fetch.service';
 
 @Component({
-  selector: 'app-cat-jewel',
-  templateUrl: './cat-jewel.component.html',
-  styleUrls: ['./cat-jewel.component.css']
+  selector: 'app-cat-elect',
+  templateUrl: './cat-elect.component.html',
+  styleUrls: ['./cat-elect.component.css']
 })
-export class CatJewelComponent implements OnInit {
-  jewellCat =[];
+export class CatElectComponent implements OnInit {
+  elecCat =[];
   All;
 
   constructor(private gotdata : FetchService , private route : Router) { }
@@ -18,11 +19,11 @@ export class CatJewelComponent implements OnInit {
       this.All = data;
       console.log(this.All);
       for(let item of this.All){
-        if(item.category === "jewelery"){
-          this.jewellCat.push(item);
+        if(item.category === "electronics"){
+          this.elecCat.push(item);
         }
       }
-      console.log(this.jewellCat);
+      console.log(this.elecCat);
       //console.log(this.womenCat);
       
     })

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import {AddToCartService} from'./add-to-cart.service'
+import { AddToCartService } from './services/add-to -cart/add-to-cart.service';
+
 
 
 @Injectable({

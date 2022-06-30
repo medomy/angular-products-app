@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FetchService } from '../fetch.service';
-import {AddToCartService} from'./../add-to-cart.service';
+import { AddToCartService } from 'src/app/services/add-to -cart/add-to-cart.service';
+import { FetchService } from 'src/app/services/fetch/fetch.service';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',

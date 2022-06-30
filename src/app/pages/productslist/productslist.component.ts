@@ -1,7 +1,8 @@
 import { Component, OnInit  } from '@angular/core';
-import { Products  } from '../products';
 import { Router } from '@angular/router';
-import { FetchService } from '../fetch.service';
+import { Products } from 'src/app/models/products';
+import { FetchService } from 'src/app/services/fetch/fetch.service';
+
 
 @Component({
   selector: 'app-productslist',

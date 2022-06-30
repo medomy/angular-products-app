@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FetchService } from '../fetch.service';
 import { Router } from '@angular/router';
+import { FetchService } from 'src/app/services/fetch/fetch.service';
+
 @Component({
-  selector: 'app-cat-women',
-  templateUrl: './cat-women.component.html',
-  styleUrls: ['./cat-women.component.css']
+  selector: 'app-cat-men',
+  templateUrl: './cat-men.component.html',
+  styleUrls: ['./cat-men.component.css']
 })
-export class CatWomenComponent implements OnInit {
-  womenCat =[];
+export class CatMenComponent implements OnInit {
+  menCat =[];
   All;
 
   constructor(private gotdata : FetchService , private route : Router) { }
@@ -17,17 +18,14 @@ export class CatWomenComponent implements OnInit {
       this.All = data;
       console.log(this.All);
       for(let item of this.All){
-        if(item.category === "women's clothing"){
-          this.womenCat.push(item);
+        if(item.category === "men's clothing"){
+          this.menCat.push(item);
         }
       }
-      console.log(this.womenCat);
+      console.log(this.menCat);
       //console.log(this.womenCat);
       
     })
-  }
-  ngAfterViewInit(){
-    
   }
   showData(id){
     this.route.navigate([`Details/${id}`]);

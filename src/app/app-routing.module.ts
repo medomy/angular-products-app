@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductslistComponent } from './productslist/productslist.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ErrorComponent } from './components/error/error.component';
-import { CatMenComponent } from './cat-men/cat-men.component';
-import { CatWomenComponent } from './cat-women/cat-women.component';
-import { CatJewelComponent } from './cat-jewel/cat-jewel.component';
-import { CatElectComponent } from './cat-elect/cat-elect.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { CartPageComponent } from './cart-page/cart-page.component';
+
 import { CartGuardGuard } from './cart-guard.guard';
+import { ErrorComponent } from './components/error/error.component';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { CatElectComponent } from './pages/cat-elect/cat-elect.component';
+import { CatJewelComponent } from './pages/cat-jewel/cat-jewel.component';
+import { CatMenComponent } from './pages/cat-men/cat-men.component';
+import { CatWomenComponent } from './pages/cat-women/cat-women.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { ProductslistComponent } from './pages/productslist/productslist.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
   {

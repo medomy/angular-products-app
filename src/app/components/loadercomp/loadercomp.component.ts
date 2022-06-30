@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoaderservService } from '../loaderserv.service';
+import { LoaderservService } from 'src/app/services/loader/loaderserv.service';
 
 @Component({
   selector: 'app-loadercomp',

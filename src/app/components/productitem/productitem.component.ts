@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Products } from '../../products';
+import { Products } from '../../models/products';
 import { StockPipe } from '../../stock.pipe';
 
 @Component({
