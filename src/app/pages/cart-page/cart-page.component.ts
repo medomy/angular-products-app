@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AddToCartService } from 'src/app/services/add-to -cart/add-to-cart.service';
 
 @Component({
@@ -10,15 +11,15 @@ export class CartPageComponent implements OnInit {
   purshasedProducts =[];
   TotalPrice : number = 0;
   counter : number =0;
-  constructor(private added : AddToCartService) { }
+  constructor(private added : AddToCartService , private router : Router) { }
 
   ngOnInit(): void {
 
     this.purshasedProducts = this.added.GetAddedToCartobject();
-    console.log(this.purshasedProducts);
     this.purshasedProducts.forEach((item)=>{
       this.TotalPrice += item.count * item.price 
     })
+
     this.added.GetCounter().subscribe((count)=>{
       this.counter = count;
     })
@@ -58,6 +59,11 @@ export class CartPageComponent implements OnInit {
   DeleteAll(){
     this.purshasedProducts = [];
     this.added.SetCounter(0);
+  }
+
+  checkOut():void{
+    this.added.setTotalPrice(this.TotalPrice);
+    this.router.navigate(["checkout"]);
   }
 
 }

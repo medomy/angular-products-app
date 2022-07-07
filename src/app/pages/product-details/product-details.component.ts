@@ -13,6 +13,7 @@ export class ProductDetailsComponent implements OnInit {
   counter;
   OneItemCounter;
   ITemCounter : number = 0;
+  isAdded : boolean = false;
   constructor(private rou : ActivatedRoute ,private Fet : FetchService,private added : AddToCartService ) { }
 
   ngOnInit(): void {
@@ -52,6 +53,7 @@ export class ProductDetailsComponent implements OnInit {
     console.log(this.added.GetCounter());
     this.Product["count"] = this.ITemCounter+1;
     this.ITemCounter++;
+    this.isAdded = true;
   }
 
 }

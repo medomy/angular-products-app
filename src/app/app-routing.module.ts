@@ -8,6 +8,7 @@ import { CatElectComponent } from './pages/cat-elect/cat-elect.component';
 import { CatJewelComponent } from './pages/cat-jewel/cat-jewel.component';
 import { CatMenComponent } from './pages/cat-men/cat-men.component';
 import { CatWomenComponent } from './pages/cat-women/cat-women.component';
+import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { ProductslistComponent } from './pages/productslist/productslist.component';
@@ -55,6 +56,12 @@ const routes: Routes = [
   {
     path:'Cart',
     component:CartPageComponent,
+    canActivate : [CartGuardGuard]
+
+  },
+  {
+    path:'checkout',
+    component:CheckOutComponent,
     canActivate : [CartGuardGuard]
 
   },

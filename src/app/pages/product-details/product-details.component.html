@@ -33,13 +33,16 @@
                 </tr>
                 <tr>
                     <th>Add to cart</th>
-                    <th><button type="button" class="btn btn-info" (click)= "AddToCart()">Add to cart</button></th>
+                    <th><button type="button" id="liveAlertBtn" class="btn btn-info" (click)= "AddToCart()">Add to cart</button></th>
                 </tr>
               </table>
         </div>
         <div class="col-4 my-5 mx-5">
             <div class="card" style="width: 18rem;">
                 <img [src]="Product.image" class="card-img-top" alt="..."> 
+                <div *ngIf="isAdded" class="alert alert-success my-5" role="alert">
+                    object is added to your cart
+                </div>
             </div>
             
         </div>

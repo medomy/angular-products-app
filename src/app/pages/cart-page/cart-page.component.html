@@ -22,9 +22,15 @@
                 <button type="button" class="btn btn-danger" (click) = "DeleteAll()">Delete All</button>
             </div>
             <div class="col-4 mx-3">
-                {{TotalPrice}}
+                you have purchased {{counter}} items
+             </div>
+             <div class="col-4 mx-3">
+                <button type="button" class="btn btn-primary my-5" (click) = "checkOut()">check out</button>
             </div>
-
+            <div class="col-4 mx-3">
+               total price : {{TotalPrice}}
+            </div>
+            
         </div>
     </div>
 </section>

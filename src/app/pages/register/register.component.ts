@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { LoginService } from 'src/app/services/login/login.service';
 import { __exportStar } from 'tslib';
 import {MustMatch} from'./CheckPassword';
 
@@ -11,7 +12,7 @@ import {MustMatch} from'./CheckPassword';
 export class RegisterComponent implements OnInit {
   RegestirationForm : FormGroup;
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder , private loginService : LoginService) { }
 
   ngOnInit(): void {
     // used form builder for must match function usage to confirm password
@@ -27,8 +28,12 @@ export class RegisterComponent implements OnInit {
     )
   }
   Register(){
-    console.log(this.RegestirationForm);
-    
+    this.loginService.login({
+      name : this.RegestirationForm.controls.FormalName.toString(),
+      userName : this.RegestirationForm.controls.UserName.toString(),
+      email : this.RegestirationForm.controls.Emailreg.toString(),
+      password : this.RegestirationForm.controls.Password.toString()
+    })
   }
 
   

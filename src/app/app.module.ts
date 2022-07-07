@@ -21,6 +21,8 @@ import { CatElectComponent } from './pages/cat-elect/cat-elect.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { LoadercompComponent } from './components/loadercomp/loadercomp.component';
 import { LoaderintInterceptor } from './loaderint.interceptor';
+import { CheckOutComponent } from './pages/check-out/check-out.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { LoaderintInterceptor } from './loaderint.interceptor';
     CatElectComponent,
     CartPageComponent,
     LoadercompComponent,
+    CheckOutComponent,
+    ModalComponent,
     
   ],
   imports: [
