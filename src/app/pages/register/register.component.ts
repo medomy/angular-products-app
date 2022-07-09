@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     // used form builder for must match function usage to confirm password
     this.RegestirationForm = this.fb.group({
-      FormalName: ["",Validators.required],
+      FormalName: ["",Validators.required , Validators.pattern(/^[a-z ,A-Z.'-]{6,}+$/i)],
       UserName: ["",[Validators.required,Validators.pattern("/^[\S]+$/gm")]],
       Emailreg: ["",[Validators.required,Validators.pattern("^[a-zA-Z0-9.!#$%&’*+\=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$")]],
       Password: ["",[Validators.required,Validators.pattern("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$")]],

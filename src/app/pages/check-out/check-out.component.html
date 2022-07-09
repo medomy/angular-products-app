@@ -21,7 +21,7 @@
                         required 
                         (ngModelChange)="validateName($event)">
                     <div *ngIf="nameErr && name.touched"
-                        [ngStyle]="{'color' : 'red'}"> This field isn't valid</div>
+                        [ngStyle]="{'color' : 'red'}"> lease provide a valid name</div>
                 </div>
                 <div class="mb-3">
                     <label for="address" class="form-label">address</label>
@@ -29,7 +29,7 @@
                         required 
                         (ngModelChange)="validateAddress($event)">
                     <div *ngIf="addressErr && address.touched"
-                        [ngStyle]="{'color' : 'red'}"> This field isn't valid</div>
+                        [ngStyle]="{'color' : 'red'}"> pleae provide a valid address like : 253 N. Cherry St.</div>
                 </div>
                 <button type="submit" class="btn btn-primary mx-5" [disabled] = "emailErr && nameErr && addressErr" data-bs-toggle="modal" data-bs-target="#ConfirmationModal">confirm</button>
                 <app-modal></app-modal>

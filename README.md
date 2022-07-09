@@ -17,6 +17,19 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 
-## Further help
+## App flow
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- first you get the home page which shows all products.
+
+- when you click `details` button you go to product details page
+
+- then you can from the detail page add the product to cart 
+
+- you ca not go to cart page unless you added something
+
+- from cart page you can check out
+
+- from check out page you confirm your order
+
+- you can also register in the app from register page
+

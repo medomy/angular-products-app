@@ -34,12 +34,14 @@ export class CheckOutComponent implements OnInit {
     else this.emailErr = false;
   }
   validateName($event : string){
-    if ($event.length === 0) this.nameErr = true;
+    const nameRegex : RegExp = /^[a-z ,A-Z.'-]{6,}+$/i;
+    if ($event.length === 0 || !nameRegex.test($event)) this.nameErr = true;
     else this.nameErr = false;
 
   }
   validateAddress($event : string){
-    if ($event.length === 0) this.addressErr = true;
+    const addressRegex : RegExp = /^[#.0-9a-zA-Z\s,-]+$/;
+    if ($event.length === 0 || !addressRegex.test($event)) this.addressErr = true;
     else this.addressErr = false; 
   }
 
